@@ -1,4 +1,14 @@
 <?php
+    
+    /**
+    *   =================================
+    *   Description: User Api methods
+    *   @author ruben@w3are.mx
+    *   @version 1.0
+    *   =================================
+    *
+    *
+    */
 
     use Slim\Slim;
 

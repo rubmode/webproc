@@ -6,28 +6,26 @@ require_once 'config.php';
 
 #Lib: Included classes to work with
 require_once 'lib/Curl.php';
-require_once 'lib/FacturacionModerna.php';
 require_once 'lib/Dropbox/autoload.php';
 
 #Actions: Included functions to work with
-require_once 'action/cfdi-facturacionmoderna.php';
-require_once 'action/cfdi-dropbox.php';
+require_once 'action/proc_user.php';
 
 #Create objects
 
 #Slim initialization
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
+
+#Is the API running?
 $app->get('/',  function () {
-        echo '{"run":"ok"}';
+		$api = array( 'API running' => 'yes' );
+        echo json_encode($api);
     }
 );
 
 #ApiMethods_
-$app->get( '/dropbox/appKey', 'getAppKey');
-$app->post( '/dropbox/token', 'getToken');
-$app->post( '/timbrar', 'timbrar');
-$app->post( '/cancelar', 'cancelar');
+
 
 #ApiRunning_
 $app->run();
