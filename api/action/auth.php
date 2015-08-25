@@ -43,7 +43,7 @@ function auth($host = null, $app_key = null)
 	
 	$token = _mkMd5($res[0]['host'].$res[0]['key'].$admin);
 	if($token != $app_key) : 
-		$response = array('result'=>0, 'desc'=>'Unauthorized');
+		die(array('result'=>0, 'desc'=>'Unauthorized'));
 	else :
 		$response = array('result'=>'success', 'desc'=>'Authorized');
 	endif;

@@ -41,4 +41,10 @@ class Proc_Controller extends CI_Controller {
         return (array('res'=>'success', 'desc'=>'Tenemos una llave de usuario.'));
     }
 
+    public function logout()
+    {
+        unset($_COOKIE['auth_key']);
+        setcookie('auth_key', null, -1, '/');
+    }
+
 }

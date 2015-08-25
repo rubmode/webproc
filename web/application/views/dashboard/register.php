@@ -17,7 +17,8 @@
 			              	<label for="exampleInputPassword1">Confirmar contraseña</label>
 			              	<input type="password" class="form-control required cpassword" id="exampleInputPassword1" placeholder="Password">
 			            </div>
-			            <div id="wp-formlog"></div>
+			            <div id="wp-formlog-app"></div>
+			            <div id="wp-formlog-api"></div>
 			            <button type="enviar" onclick="wp.user.register(event,'#wp-register');" class="btn btn-default">Enviar</button>
 		          	</div>
 				</div>

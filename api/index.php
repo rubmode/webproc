@@ -10,6 +10,7 @@ require_once 	'lib/Dropbox/autoload.php';
 
 #Actions: Included functions to work with
 require_once    'action/include/mysql_crud.php';
+require_once    'config/options.php';
 require_once 	'action/auth.php';
 require_once 	'action/user.php';
 
@@ -27,8 +28,9 @@ $app->get('/',  function () {
 
 #UserMethods_
 $app->post('/user/addnew', 'AddNewUser');
+$app->post('/user/login', 'LoginUser');
 
-#Get an app_token for an app
+#Get an app_token for an app: Secret -> "admin"
 $app->get('/auth/app/get_token/:app_key/:admin_secret', 'getAppToken');
 
 #Let's run
